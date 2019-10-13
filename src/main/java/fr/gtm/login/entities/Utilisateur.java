@@ -12,7 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 @NamedQueries({
-	@NamedQuery(name = "Utilisateur.testConnexion", query = "SELECT u FROM Utilisateur u WHERE u.nom = :nom AND u.motDePass = :motDePass")
+	@NamedQuery(name = "Utilisateur.testConnexion", query = "SELECT u FROM Utilisateur u WHERE u.nom = :nom AND u.motDePass = :motDePass"),
+	@NamedQuery(name="Role.all", query = "SELECT u.role FROM Utilisateur u WHERE u.nom = :nom")
 })
 public class Utilisateur {
 
